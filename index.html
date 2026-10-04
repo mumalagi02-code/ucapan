@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Rohana 🐱</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at 15% 15%, #f8e7df, transparent 30%),
+    linear-gradient(135deg, #ead8d0, #f8eee9);
+  color: #59443c;
+  overflow: hidden;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  padding: 42px 28px;
+  text-align: center;
+  background: rgba(255,255,255,.86);
+  border: 1px solid rgba(110,75,60,.14);
+  border-radius: 30px;
+  box-shadow: 0 20px 55px rgba(75,50,40,.15);
+  overflow: hidden;
+}
+
+/* =========================
+   KUCING ANIME
+   ========================= */
+
+.anime-cat {
+  position: absolute;
+  bottom: 18px;
+  left: -100px;
+  font-size: 55px;
+  animation: jalanKucing 12s linear infinite;
+  z-index: 3;
+}
+
+.anime-cat2 {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  font-size: 42px;
+  animation: bobbing 2s ease-in-out infinite;
+  opacity: .8;
+}
+
+/* Kucing berjalan */
+@keyframes jalanKucing {
+  0% {
+    left: -90px;
+    transform: scaleX(1);
+  }
+
+  45% {
+    left: calc(100% - 40px);
+    transform: scaleX(1);
+  }
+
+  50% {
+    left: calc(100% - 40px);
+    transform: scaleX(-1);
+  }
+
+  95% {
+    left: -90px;
+    transform: scaleX(-1);
+  }
+
+  100% {
+    left: -90px;
+    transform: scaleX(1);
+  }
+}
+
+/* Kucing kecil melompat */
+@keyframes bobbing {
+  0%, 100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+/* Kucing dekorasi */
+.cat {
+  position: absolute;
+  font-size: 38px;
+  opacity: .18;
+}
+
+.cat1 {
+  top: 20px;
+  left: 20px;
+  animation: kedip 3s ease-in-out infinite;
+}
+
+.cat3 {
+  bottom: 25px;
+  right: 25px;
+  animation: bobbing 2.5s ease-in-out infinite;
+}
+
+@keyframes kedip {
+  0%, 90%, 100% {
+    transform: scaleY(1);
+  }
+
+  95% {
+    transform: scaleY(.7);
+  }
+}
+
+
+/* =========================
+   HALAMAN DEPAN
+   ========================= */
+
+.cover {
+  transition: .6s ease;
+}
+
+.cover.hide {
+  display: none;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #9b7a6e;
+}
+
+h1 {
+  margin: 15px 0 8px;
+  font-size: clamp(36px, 10vw, 55px);
+  font-weight: 500;
+  color: #684d43;
+}
+
+.subtitle {
+  color: #927267;
+  font-size: 16px;
+}
+
+.big-cat {
+  font-size: 72px;
+  margin: 20px 0;
+  animation: lompat 2s ease-in-out infinite;
+}
+
+@keyframes lompat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+button {
+  border: none;
+  padding: 14px 26px;
+  border-radius: 50px;
+  background: #76584d;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(70,45,35,.18);
+  transition: .25s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: #60483f;
+}
+
+
+/* =========================
+   UCAPAN
+   ========================= */
+
+.letter {
+  display: none;
+  animation: muncul .8s ease;
+}
+
+.letter.show {
+  display: block;
+}
+
+.cat-face {
+  font-size: 62px;
+  margin-bottom: 8px;
+  animation: kedip 3s ease-in-out infinite;
+}
+
+h2 {
+  margin: 8px 0 22px;
+  font-size: clamp(25px, 7vw, 34px);
+  line-height: 1.35;
+  font-weight: 500;
+  color: #684d43;
+}
+
+.message {
+  padding: 22px;
+  border-radius: 20px;
+  background: #faf3ef;
+  border: 1px solid #eadbd4;
+  font-family: Arial, sans-serif;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.footer {
+  margin-top: 22px;
+  font-size: 13px;
+  color: #a08478;
+  font-style: italic;
+}
+
+.music-status {
+  margin-top: 14px;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  color: #a08478;
+}
+
+@keyframes muncul {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   BINTANG KECIL
+   ========================= */
+
+.star {
+  position: absolute;
+  color: #b89788;
+  opacity: .35;
+  animation: bintang 3s ease-in-out infinite;
+}
+
+.star1 {
+  top: 100px;
+  left: 35px;
+}
+
+.star2 {
+  top: 145px;
+  right: 45px;
+  animation-delay: 1s;
+}
+
+.star3 {
+  bottom: 100px;
+  left: 55px;
+  animation-delay: 1.5s;
+}
+
+@keyframes bintang {
+  0%, 100% {
+    opacity: .2;
+    transform: scale(.8);
+  }
+
+  50% {
+    opacity: .7;
+    transform: scale(1.2);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <!-- Dekorasi -->
+  <div class="cat cat1">🐱</div>
+  <div class="cat cat3">🐈</div>
+
+  <div class="anime-cat">🐈</div>
+  <div class="anime-cat2">🐱</div>
+
+  <div class="star star1">✦</div>
+  <div class="star star2">✧</div>
+  <div class="star star3">✦</div>
+
+
+  <!-- HALAMAN DEPAN -->
+
+  <div class="cover" id="cover">
+
+    <div class="label">
+      A little birthday card
+    </div>
+
+    <h1>
+      Happy Birthday
+    </h1>
+
+    <div class="subtitle">
+      untuk Rohana ♡
+    </div>
+
+    <div class="big-cat">
+      🐈
+    </div>
+
+    <button id="openBtn">
+      Buka Ucapan ✨
+    </button>
+
+  </div>
+
+
+  <!-- UCAPAN -->
+
+  <div class="letter" id="letter">
+
+    <div class="cat-face">
+      🐱
+    </div>
+
+    <h2>
+      Happy 20th Birthday,<br>
+      Rohana! 🎂
+    </h2>
+
+    <div class="message">
+
+      Semoga di usia yang baru ini kamu
+      selalu diberi kesehatan, kebahagiaan,
+      keberkahan dalam setiap langkah,
+      serta umur yang panjang. 🤍
+
+      <br><br>
+
+      Semoga semua doa dan harapan baikmu
+      dikabulkan. ✨
+
+    </div>
+
+    <div class="footer">
+      with love & a little bit of cat energy 🐾
+    </div>
+
+    <div class="music-status">
+      ♪ birthday melody playing...
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   MUSIK
+   ========================= */
+
+let audioContext;
+let masterGain;
+let musicStarted = false;
+
+const notes = {
+  C5: 523.25,
+  D5: 587.33,
+  E5: 659.25,
+  F5: 698.46,
+  G5: 783.99,
+  A5: 880.00,
+  B5: 987.77,
+  C6: 1046.50
+};
+
+const melody = [
+
+  ["C5", 0.00, 0.35],
+  ["E5", 0.40, 0.35],
+  ["G5", 0.80, 0.45],
+  ["E5", 1.30, 0.35],
+
+  ["D5", 1.80, 0.35],
+  ["F5", 2.20, 0.35],
+  ["A5", 2.60, 0.45],
+  ["F5", 3.10, 0.35],
+
+  ["E5", 3.60, 0.35],
+  ["G5", 4.00, 0.35],
+  ["B5", 4.40, 0.45],
+  ["G5", 4.90, 0.35],
+
+  ["C6", 5.40, 0.60],
+  ["B5", 6.10, 0.35],
+  ["G5", 6.50, 0.55]
+
+];
+
+
+function playNote(note, start, duration) {
+
+  const oscillator =
+    audioContext.createOscillator();
+
+  const gain =
+    audioContext.createGain();
+
+  oscillator.type = "sine";
+
+  oscillator.frequency.value =
+    notes[note];
+
+  const now =
+    audioContext.currentTime;
+
+  gain.gain.setValueAtTime(
+    0,
+    now + start
+  );
+
+  gain.gain.linearRampToValueAtTime(
+    0.10,
+    now + start + 0.04
+  );
+
+  gain.gain.exponentialRampToValueAtTime(
+    0.001,
+    now + start + duration
+  );
+
+  oscillator.connect(gain);
+  gain.connect(masterGain);
+
+  oscillator.start(
+    now + start
+  );
+
+  oscillator.stop(
+    now + start + duration + 0.05
+  );
+}
+
+
+function startMusic() {
+
+  if (musicStarted) return;
+
+  musicStarted = true;
+
+  const AudioContext =
+    window.AudioContext ||
+    window.webkitAudioContext;
+
+  audioContext =
+    new AudioContext();
+
+  masterGain =
+    audioContext.createGain();
+
+  masterGain.gain.value =
+    0.75;
+
+  masterGain.connect(
+    audioContext.destination
+  );
+
+  melody.forEach(note => {
+
+    playNote(
+      note[0],
+      note[1],
+      note[2]
+    );
+
+  });
+
+  setTimeout(() => {
+
+    musicStarted = false;
+
+    startMusic();
+
+  }, 7600);
+}
+
+
+/* =========================
+   TOMBOL
+   ========================= */
+
+const openBtn =
+  document.getElementById("openBtn");
+
+const cover =
+  document.getElementById("cover");
+
+const letter =
+  document.getElementById("letter");
+
+
+openBtn.addEventListener(
+  "click",
+  () => {
+
+    cover.classList.add("hide");
+
+    letter.classList.add("show");
+
+    startMusic();
+
+  }
+);
+
+</script>
+
+</body>
+  </html>
